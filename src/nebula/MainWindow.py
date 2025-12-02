@@ -510,6 +510,7 @@ class Nebula(QMainWindow):
             command_input_area=self.command_input_area,
         )
         self.input_mode_signal.connect(self.command_input_area.set_input_mode)
+        self.input_mode_signal.emit("terminal")
 
         self.central_display_area.notes_signal_from_central_display_area.connect(
             self.command_input_area.execute_api_call
